@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AURUM — Fine Dining Experience</title>
+<meta name="description" content="AURUM — An ultra-premium fine dining destination. Reserve your table, explore our artisan menu, and experience culinary excellence."/>
+<meta property="og:title" content="AURUM Fine Dining"/>
+<meta property="og:description" content="Where every plate tells a story."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+ <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"AURUM Fine Dining",
+  "image":"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200",
+  "address":{"@type":"PostalAddress","streetAddress":"14 Golden Avenue","addressLocality":"New York","postalCode":"10001","addressCountry":"US"},
+  "telephone":"+1-212-555-0182",
+  "priceRange":"$$$$",
+  "servesCuisine":"Contemporary French",
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"17:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"12:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"12:00","closes":"22:00"}],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"847"},
+  "acceptsReservations":true
+}
+</script>
+<link rel="stylesheet" href="style.css">
+
+  </head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">AURUM</a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reservation">Reserve</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#loyalty">Loyalty</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <button class="cart-trigger" id="cartTrigger" aria-label="Open cart">
+        🛒
+        <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+      </button>
+    </li>
+    <li><a href="#reservation" class="nav-cta">Reserve Table</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#menu" onclick="closeMobileNav()">Menu</a>
+  <a href="#reservation" onclick="closeMobileNav()">Reservations</a>
+  <a href="#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="#events" onclick="closeMobileNav()">Events</a>
+  <a href="#loyalty" onclick="closeMobileNav()">Loyalty</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-img"></div>
+    <div class="hero-grain"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Est. 2019 · New York City</div>
+    <h1 class="hero-title">Where <em>Art</em><br>Meets<br>Flavour</h1>
+    <p class="hero-subtitle">An immersive dining journey crafted by Michelin-starred Chef Laurent Moreau. Every plate is a canvas, every evening — a memory.</p>
+    <div class="hero-actions">
+      <a href="#reservation" class="btn-primary"><span>Reserve a Table</span> <span>→</span></a>
+      <a href="#menu" class="btn-secondary">Explore Menu <span>↓</span></a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">2★</div>
+      <div class="stat-label">Michelin Stars</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">847</div>
+      <div class="stat-label">Reviews</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.9</div>
+      <div class="stat-label">Rating</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== FEATURED DISHES ==================== -->
+<section class="featured" id="featured">
+  <div class="featured-header reveal">
+    <div>
+      <div class="section-eyebrow">Chef's Selection</div>
+      <h2 class="section-title">Signature <em>Creations</em></h2>
+    </div>
+    <a href="#menu" class="btn-secondary">View Full Menu →</a>
+  </div>
+  <div class="featured-grid">
+    <div class="dish-card reveal" data-dish="Truffle Risotto" data-price="68" data-img="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&auto=format&fit=crop&q=80">
+      <img class="dish-img" src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&auto=format&fit=crop&q=80" alt="Truffle Risotto" loading="lazy"/>
+      <div class="dish-overlay"></div>
+      <div class="dish-info">
+        <div class="dish-tag">✦ Signature</div>
+        <div class="dish-name">Black Truffle Risotto</div>
+        <div class="dish-desc">Aged Carnaroli, 24-month Parmigiano Reggiano, shaved Périgord black truffle, truffle oil, micro herbs</div>
+        <div class="dish-price"><span>$68</span><button class="dish-btn" onclick="addToCart('Black Truffle Risotto', 68, this)">+</button></div>
+      </div>
+    </div>
+    <div class="dish-card reveal" style="transition-delay:0.1s" data-dish="Lobster Bisque" data-price="52">
+      <img class="dish-img" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&auto=format&fit=crop&q=80" alt="Lobster" loading="lazy"/>
+      <div class="dish-overlay"></div>
+      <div class="dish-info">
+        <div class="dish-tag">✦ Seafood</div>
+        <div class="dish-name">Maine Lobster</div>
+        <div class="dish-desc">Butter-poached, saffron beurre blanc, caviar pearls</div>
+        <div class="dish-price"><span>$92</span><button class="dish-btn" onclick="addToCart('Maine Lobster', 92, this)">+</button></div>
+      </div>
+    </div>
+    <div class="dish-card reveal" style="transition-delay:0.15s">
+      <img class="dish-img" src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&auto=format&fit=crop&q=80" alt="Wagyu" loading="lazy"/>
+      <div class="dish-overlay"></div>
+      <div class="dish-info">
+        <div class="dish-tag">✦ Prime</div>
+        <div class="dish-name">A5 Wagyu Striploin</div>
+        <div class="dish-desc">Japanese Wagyu, bone marrow jus, truffle butter</div>
+        <div class="dish-price"><span>$185</span><button class="dish-btn" onclick="addToCart('A5 Wagyu', 185, this)">+</button></div>
+      </div>
+    </div>
+    <div class="dish-card reveal" style="transition-delay:0.2s">
+      <img class="dish-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&auto=format&fit=crop&q=80" alt="Dessert" loading="lazy"/>
+      <div class="dish-overlay"></div>
+      <div class="dish-info">
+        <div class="dish-tag">✦ Dessert</div>
+        <div class="dish-name">Valrhona Soufflé</div>
+        <div class="dish-desc">70% Valrhona dark chocolate, Tahitian vanilla bean ice cream</div>
+        <div class="dish-price"><span>$28</span><button class="dish-btn" onclick="addToCart('Valrhona Soufflé', 28, this)">+</button></div>
+      </div>
+    </div>
+    <div class="dish-card reveal" style="transition-delay:0.25s">
+      <img class="dish-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&auto=format&fit=crop&q=80" alt="Steak" loading="lazy"/>
+      <div class="dish-overlay"></div>
+      <div class="dish-info">
+        <div class="dish-tag">✦ Grill</div>
+        <div class="dish-name">Dry-Aged Prime Rib</div>
+        <div class="dish-desc">45-day dry-aged, compound butter, au jus</div>
+        <div class="dish-price"><span>$120</span><button class="dish-btn" onclick="addToCart('Prime Rib', 120, this)">+</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EXPERIENCE ==================== -->
+<section class="experience" id="experience">
+  <div class="exp-visual reveal-left">
+    <img class="exp-img-main" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=700&auto=format&fit=crop&q=80" alt="Restaurant Interior" loading="lazy"/>
+    <img class="exp-img-accent" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=80" alt="Dish detail" loading="lazy"/>
+    <div class="exp-badge">
+      <div class="exp-badge-num">12</div>
+      <div class="exp-badge-text">Years of<br>Excellence</div>
+    </div>
+  </div>
+  <div class="exp-content reveal-right">
+    <div class="section-eyebrow">Our Philosophy</div>
+    <h2 class="exp-title">Crafted with<br><em>Intention</em></h2>
+    <p class="exp-text">At AURUM, we believe dining is theatre. Every element — the light, the silence, the first taste — is choreographed to move you. We source ingredients with obsessive care, partnering with 34 artisan producers across three continents.</p>
+    <p class="exp-text">Our tasting menu changes with the seasons, never repeating a dish. To dine here is to experience something that cannot be replicated — even tomorrow night.</p>
+    <div class="exp-features">
+      <div class="exp-feature">
+        <div class="exp-feature-icon">🌿</div>
+        <div class="exp-feature-text">
+          <h4>Farm-to-Table</h4>
+          <p>Direct partnerships with heritage farms and artisan producers globally</p>
+        </div>
+      </div>
+      <div class="exp-feature">
+        <div class="exp-feature-icon">🍷</div>
+        <div class="exp-feature-text">
+          <h4>Sommelier Curated</h4>
+          <p>2,200-label cellar with exclusive allocations from premier vineyards</p>
+        </div>
+      </div>
+      <div class="exp-feature">
+        <div class="exp-feature-icon">👨‍🍳</div>
+        <div class="exp-feature-text">
+          <h4>Chef's Table</h4>
+          <p>Private dining for 6 guests with bespoke 12-course experience</p>
+        </div>
+      </div>
+      <div class="exp-feature">
+        <div class="exp-feature-icon">⭐</div>
+        <div class="exp-feature-text">
+          <h4>Michelin Starred</h4>
+          <p>Two Michelin stars, James Beard Award 2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MENU ==================== -->
+<section class="menu-section" id="menu">
+  <div class="menu-header reveal">
+    <div>
+      <div class="section-eyebrow">Culinary Journey</div>
+      <h2 class="section-title">Our <em>Menu</em></h2>
+    </div>
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="switchTab('starters',this)">Starters</button>
+      <button class="menu-tab" onclick="switchTab('mains',this)">Mains</button>
+      <button class="menu-tab" onclick="switchTab('desserts',this)">Desserts</button>
+      <button class="menu-tab" onclick="switchTab('drinks',this)">Drinks</button>
+    </div>
+  </div>
+
+  <div class="menu-items active" id="starters">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=200&auto=format&fit=crop&q=80" alt="Oysters" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Fine de Claire Oysters</div>
+          <div class="menu-item-desc">Normandy oysters, mignonette, Champagne granita, lemon caviar</div>
+          <div class="menu-item-tags"><span class="menu-tag">Gluten Free</span><span class="menu-tag">Seafood</span></div>
+        </div>
+        <div class="menu-item-price">$38</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1547592180-85f173990554?w=200&auto=format&fit=crop&q=80" alt="Foie gras" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Foie Gras Torchon</div>
+          <div class="menu-item-desc">Hudson Valley foie gras, sauternes gelée, brioche, fig compote</div>
+          <div class="menu-item-tags"><span class="menu-tag">Signature</span></div>
+        </div>
+        <div class="menu-item-price">$48</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=200&auto=format&fit=crop&q=80" alt="Tuna" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Bluefin Tuna Tartare</div>
+          <div class="menu-item-desc">Otoro, avocado mousse, sesame tuile, yuzu ponzu</div>
+          <div class="menu-item-tags"><span class="menu-tag">Gluten Free</span><span class="menu-tag">Raw</span></div>
+        </div>
+        <div class="menu-item-price">$52</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&auto=format&fit=crop&q=80" alt="Soup" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Truffle Velouté</div>
+          <div class="menu-item-desc">Parisian mushroom cream, black truffle shavings, chive oil</div>
+          <div class="menu-item-tags"><span class="menu-tag">Vegetarian</span></div>
+        </div>
+        <div class="menu-item-price">$34</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-items" id="mains">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&auto=format&fit=crop&q=80" alt="Wagyu" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">A5 Wagyu Striploin</div>
+          <div class="menu-item-desc">Japanese Wagyu BMS 12, bone marrow jus, truffle butter, heirloom vegetables</div>
+          <div class="menu-item-tags"><span class="menu-tag">Signature</span><span class="menu-tag">Gluten Free</span></div>
+        </div>
+        <div class="menu-item-price">$185</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&auto=format&fit=crop&q=80" alt="Duck" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Moulard Duck Breast</div>
+          <div class="menu-item-desc">Cherry gastrique, lavender jus, celeriac purée, hazelnut</div>
+          <div class="menu-item-tags"><span class="menu-tag">Gluten Free</span></div>
+        </div>
+        <div class="menu-item-price">$78</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=200&auto=format&fit=crop&q=80" alt="Risotto" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Black Truffle Risotto</div>
+          <div class="menu-item-desc">Carnaroli, aged Parmigiano, Périgord truffle, truffle oil</div>
+          <div class="menu-item-tags"><span class="menu-tag">Vegetarian</span><span class="menu-tag">Signature</span></div>
+        </div>
+        <div class="menu-item-price">$68</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=200&auto=format&fit=crop&q=80" alt="Halibut" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Wild Halibut en Croûte</div>
+          <div class="menu-item-desc">Pacific halibut, spinach mousseline, champagne beurre blanc</div>
+          <div class="menu-item-tags"><span class="menu-tag">Seafood</span></div>
+        </div>
+        <div class="menu-item-price">$88</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-items" id="desserts">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&auto=format&fit=crop&q=80" alt="Chocolate" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Valrhona Soufflé</div>
+          <div class="menu-item-desc">70% dark chocolate, Tahitian vanilla bean ice cream, gold leaf</div>
+          <div class="menu-item-tags"><span class="menu-tag">Vegetarian</span><span class="menu-tag">Signature</span></div>
+        </div>
+        <div class="menu-item-price">$28</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=200&auto=format&fit=crop&q=80" alt="Sorbet" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Champagne Sorbet</div>
+          <div class="menu-item-desc">Dom Pérignon sorbet, fresh berries, edible florals</div>
+          <div class="menu-item-tags"><span class="menu-tag">Vegan</span><span class="menu-tag">Gluten Free</span></div>
+        </div>
+        <div class="menu-item-price">$22</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&auto=format&fit=crop&q=80" alt="Mille" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Mille-Feuille Royale</div>
+          <div class="menu-item-desc">Caramelised puff pastry, Tahitian vanilla crème pâtissière</div>
+          <div class="menu-item-tags"><span class="menu-tag">Vegetarian</span></div>
+        </div>
+        <div class="menu-item-price">$26</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=200&auto=format&fit=crop&q=80" alt="Cheese" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Artisan Cheese Board</div>
+          <div class="menu-item-desc">Selection of 5 French cheeses, honeycomb, walnuts, quince</div>
+          <div class="menu-item-tags"><span class="menu-tag">Vegetarian</span><span class="menu-tag">Gluten Free</span></div>
+        </div>
+        <div class="menu-item-price">$38</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-items" id="drinks">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=200&auto=format&fit=crop&q=80" alt="Wine" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Krug Grande Cuvée</div>
+          <div class="menu-item-desc">Multi-vintage Champagne, toasty, complex, creamy finish</div>
+          <div class="menu-item-tags"><span class="menu-tag">Champagne</span></div>
+        </div>
+        <div class="menu-item-price">$48 / glass</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&auto=format&fit=crop&q=80" alt="Cocktail" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Aurum Signature</div>
+          <div class="menu-item-desc">24-karat gold flake, cognac, honey, orange bitters, smoked</div>
+          <div class="menu-item-tags"><span class="menu-tag">Cocktail</span><span class="menu-tag">Signature</span></div>
+        </div>
+        <div class="menu-item-price">$32</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=200&auto=format&fit=crop&q=80" alt="Tea" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Imperial Pu-erh Tea</div>
+          <div class="menu-item-desc">30-year aged cake, ceremonial preparation, earthen notes</div>
+          <div class="menu-item-tags"><span class="menu-tag">Non-Alcoholic</span><span class="menu-tag">Vegan</span></div>
+        </div>
+        <div class="menu-item-price">$18</div>
+      </div>
+      <div class="menu-item">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1560508179-b2c9a3f8b5c4?w=200&auto=format&fit=crop&q=80" alt="Bordeaux" loading="lazy"/>
+        <div class="menu-item-info">
+          <div class="menu-item-name">Château Margaux 2015</div>
+          <div class="menu-item-desc">Premier Grand Cru Classé, Bordeaux, dark fruit, cedar, silk</div>
+          <div class="menu-item-tags"><span class="menu-tag">Red Wine</span></div>
+        </div>
+        <div class="menu-item-price">$95 / glass</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:3rem">
+    <a href="#" class="btn-primary" style="display:inline-flex"><span>Download Full Menu</span> <span>↓</span></a>
+  </div>
+</section>
+
+<!-- ==================== RESERVATION ==================== -->
+<section class="reservation" id="reservation">
+  <div class="reservation-inner reveal">
+    <div class="section-eyebrow">Secure Your Evening</div>
+    <h2 class="section-title">Make a <em>Reservation</em></h2>
+    <p style="color:var(--text-light);margin-top:1rem;font-size:0.9rem;max-width:450px;line-height:1.8">We recommend booking at least 3 weeks in advance. For parties of 8 or more, please call us directly.</p>
+
+    <div class="reservation-form" id="reservationForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="Laurent" id="fname"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" placeholder="Moreau" id="lname"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" placeholder="you@example.com" id="remail"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" type="tel" placeholder="+1 (212) 000-0000" id="rphone"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Date</label>
+          <input class="form-input" type="date" id="rdate"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Time</label>
+          <select class="form-select" id="rtime">
+            <option value="">Select Time</option>
+            <option>5:00 PM</option><option>5:30 PM</option>
+            <option>6:00 PM</option><option>6:30 PM</option>
+            <option>7:00 PM</option><option>7:30 PM</option>
+            <option>8:00 PM</option><option>8:30 PM</option>
+            <option>9:00 PM</option><option>9:30 PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Number of Guests</label>
+          <div class="guest-selector">
+            <button class="guest-btn" onclick="changeGuests(-1)">−</button>
+            <span id="guest-count">2</span>
+            <button class="guest-btn" onclick="changeGuests(1)">+</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Occasion</label>
+          <select class="form-select">
+            <option>No special occasion</option>
+            <option>Anniversary</option>
+            <option>Birthday</option>
+            <option>Business Dinner</option>
+            <option>Proposal</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Special Requests</label>
+          <textarea class="form-input" placeholder="Dietary restrictions, allergies, or special arrangements…" id="rnotes"></textarea>
+        </div>
+      </div>
+      <button class="form-submit" onclick="submitReservation()">Confirm Reservation</button>
+      <div class="success-msg" id="successMsg">
+        ✦ Your table has been reserved.<br>
+        <span style="font-size:1rem;color:var(--text-muted)">Check your email for confirmation details.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CHEF ==================== -->
+<div class="chef-section reveal">
+  <div class="chef-visual">
+    <img class="chef-img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&auto=format&fit=crop&q=80" alt="Chef Laurent Moreau" loading="lazy"/>
+    <div class="chef-visual-overlay"></div>
+  </div>
+  <div class="chef-content">
+    <div class="section-eyebrow">The Artisan</div>
+    <blockquote class="chef-quote">
+      "A plate is not finished when everything has been added — but when nothing more can be taken away."
+    </blockquote>
+    <div class="chef-name">Chef Laurent Moreau</div>
+    <div class="chef-title">Executive Chef & Founder</div>
+    <p style="color:var(--text-light);font-size:0.85rem;line-height:1.9">Trained under Joël Robuchon and Heston Blumenthal, Chef Laurent brings 22 years of mastery to every dish. His philosophy marries classical French technique with modern molecular precision — each plate a studied emotion.</p>
+    <div class="chef-awards">
+      <div class="award-badge">2 Michelin Stars</div>
+      <div class="award-badge">James Beard 2023</div>
+      <div class="award-badge">Forbes 30 Under 30</div>
+      <div class="award-badge">World's 50 Best</div>
+    </div>
+    <div style="margin-top:2rem">
+      <a href="#reservation" class="btn-primary"><span>Dine with the Chef</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== REVIEWS ==================== -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header reveal">
+    <div class="section-eyebrow">Voices</div>
+    <h2 class="section-title">Guest <em>Experiences</em></h2>
+    <div class="star-rating">★★★★★</div>
+    <p style="color:var(--text-muted);font-size:0.8rem">4.9 · 847 Reviews · Google &amp; Resy</p>
+  </div>
+  <div class="reviews-slider reveal">
+    <div class="reviews-track" id="reviewTrack">
+      <div class="review-card">
+        <p class="review-text">"The tasting menu was the single greatest meal of my life. Every course felt like a revelation — the kind of dinner that rewires how you think about food entirely."</p>
+        <div class="reviewer">
+          <img class="reviewer-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Sarah"/>
+          <div class="reviewer-info">
+            <div class="reviewer-name">Sarah Mitchell</div>
+            <div class="reviewer-location">London · ★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"We celebrated our 10th anniversary here and AURUM exceeded every expectation. The attention to detail — from the welcome note to the final mignardises — was breathtaking."</p>
+        <div class="reviewer">
+          <img class="reviewer-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="James"/>
+          <div class="reviewer-info">
+            <div class="reviewer-name">James & Clara Torres</div>
+            <div class="reviewer-location">New York · ★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"The wagyu and truffle risotto are reasons enough to fly from Tokyo. The service is invisible in the best way — present before you realise you need something."</p>
+        <div class="reviewer">
+          <img class="reviewer-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Kenji"/>
+          <div class="reviewer-info">
+            <div class="reviewer-name">Kenji Nakamura</div>
+            <div class="reviewer-location">Tokyo · ★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="review-arrows">
+      <button class="review-arrow" onclick="prevReview()">←</button>
+      <button class="review-arrow" onclick="nextReview()">→</button>
+    </div>
+    <div class="review-nav">
+      <div class="review-dot active" onclick="goToReview(0)"></div>
+      <div class="review-dot" onclick="goToReview(1)"></div>
+      <div class="review-dot" onclick="goToReview(2)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EVENTS ==================== -->
+<section class="events" id="events">
+  <div class="reveal">
+    <div class="section-eyebrow">What's On</div>
+    <h2 class="section-title">Events & <em>Specials</em></h2>
+  </div>
+  <div class="events-grid">
+    <div class="event-card reveal" style="transition-delay:0.1s">
+      <img class="event-img" src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&auto=format&fit=crop&q=80" alt="Wine" loading="lazy"/>
+      <div class="event-info">
+        <div class="event-date">March 22, 2026 · 7:00 PM</div>
+        <div class="event-name">Burgundy Wine Dinner</div>
+        <div class="event-desc">5-course paired tasting with DRC and Leroy selections. $380 per person.</div>
+      </div>
+    </div>
+    <div class="event-card reveal" style="transition-delay:0.15s">
+      <img class="event-img" src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=600&auto=format&fit=crop&q=80" alt="Jazz" loading="lazy"/>
+      <div class="event-info">
+        <div class="event-date">Every Friday · 8:30 PM</div>
+        <div class="event-name">Jazz & Late Night Menu</div>
+        <div class="event-desc">Live jazz quartet, signature cocktails, and our exclusive late-night brasserie menu.</div>
+      </div>
+    </div>
+    <div class="event-card reveal" style="transition-delay:0.2s">
+      <img class="event-img" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&auto=format&fit=crop&q=80" alt="Truffle" loading="lazy"/>
+      <div class="event-info">
+        <div class="event-date">April 5, 2026 · 6:30 PM</div>
+        <div class="event-name">White Truffle Season</div>
+        <div class="event-desc">Celebrating Alba white truffle season with Chef Laurent's special 8-course tribute menu.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOYALTY ==================== -->
+<section class="loyalty" id="loyalty">
+  <div class="loyalty-inner reveal">
+    <div class="section-eyebrow" style="justify-content:center"><span style="display:none"></span>Membership</div>
+    <h2 class="section-title">The AURUM <em>Circle</em></h2>
+    <p style="color:var(--text-light);margin-top:1rem;font-size:0.9rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8">An exclusive rewards programme for our most cherished guests. Earn points with every visit, unlock rare privileges, and become part of our inner circle.</p>
+    <div class="loyalty-tiers">
+      <div class="tier-card">
+        <div class="tier-label">Entry Level</div>
+        <div class="tier-name">Silver</div>
+        <div class="tier-price">Complimentary</div>
+        <ul class="tier-perks">
+          <li>Earn 1 point per $1 spent</li>
+          <li>Birthday dessert on the house</li>
+          <li>Early event access</li>
+          <li>Member-only offers</li>
+        </ul>
+        <button class="tier-btn">Join Free</button>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-label">★ Most Popular</div>
+        <div class="tier-name">Gold</div>
+        <div class="tier-price">$250 / year</div>
+        <ul class="tier-perks">
+          <li>Earn 2× points per visit</li>
+          <li>Priority table reservations</li>
+          <li>Complimentary chef's amuse-bouche</li>
+          <li>Seasonal gift hampers</li>
+          <li>Invitations to private events</li>
+        </ul>
+        <button class="tier-btn">Become Gold</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Exclusive</div>
+        <div class="tier-name">Platinum</div>
+        <div class="tier-price">By invitation</div>
+        <ul class="tier-perks">
+          <li>Earn 3× points per visit</li>
+          <li>Dedicated concierge</li>
+          <li>Private chef's table access</li>
+          <li>Wine cellar tour & tasting</li>
+          <li>Complimentary Champagne upon arrival</li>
+          <li>Annual bespoke dining experience</li>
+        </ul>
+        <button class="tier-btn">Inquire</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NEWSLETTER ==================== -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-content reveal-left">
+    <div class="section-eyebrow">Stay Connected</div>
+    <h2 class="section-title">The <em>Inner Table</em></h2>
+    <p class="newsletter-text">Join our exclusive mailing list for seasonal menu previews, event invitations, and members-only offers — delivered with the same care we bring to every plate.</p>
+  </div>
+  <div class="reveal-right">
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="your@email.com" id="newsletterEmail"/>
+      <button class="newsletter-submit" onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+    <p style="font-size:0.7rem;color:var(--text-muted);margin-top:1rem">We respect your privacy. Unsubscribe anytime.</p>
+    <div class="newsletter-offer">
+      <div class="offer-icon">🥂</div>
+      <div class="offer-text">Subscribe today and receive <strong>15% off your next visit</strong> plus a complimentary glass of Champagne upon arrival.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOCATION ==================== -->
+<div class="location" id="contact">
+  <div class="location-info reveal-left">
+    <div class="section-eyebrow">Find Us</div>
+    <h2 class="section-title">Visit <em>AURUM</em></h2>
+    <div class="location-details">
+      <div class="location-detail">
+        <div class="location-icon">📍</div>
+        <div class="location-detail-text">
+          <h4>Address</h4>
+          <p>14 Golden Avenue, Midtown Manhattan<br>New York, NY 10001</p>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="location-icon">🕐</div>
+        <div class="location-detail-text">
+          <h4>Opening Hours</h4>
+          <p>Mon–Thu: 5:00 PM – 11:00 PM<br>Fri–Sat: 12:00 PM – 12:00 AM<br>Sunday: 12:00 PM – 10:00 PM</p>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="location-icon">📞</div>
+        <div class="location-detail-text">
+          <h4>Reservations</h4>
+          <p>+1 (212) 555-0182<br>reservations@aurum.com</p>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="location-icon">🚇</div>
+        <div class="location-detail-text">
+          <h4>Getting Here</h4>
+          <p>5 min walk from Grand Central (4/5/6 lines)<br>Valet parking available from 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="location-map">
+    <img class="map-placeholder" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&auto=format&fit=crop&q=80" alt="New York City" loading="lazy"/>
+    <div class="map-pin">
+      <div class="map-pin-icon">📍</div>
+      <div class="map-pin-line"></div>
+    </div>
+    <div class="map-overlay">
+      <h3>AURUM</h3>
+      <p>14 Golden Avenue, NYC</p>
+      <a href="https://maps.google.com" target="_blank" rel="noopener">Get Directions →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="footer-logo">AURUM</span>
+      <p class="footer-tagline">"Where every plate tells a story."</p>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.7">Fine dining in the heart of Manhattan. Two Michelin stars. One unforgettable experience.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" aria-label="Instagram">ig</a>
+        <a class="social-link" href="#" aria-label="Facebook">fb</a>
+        <a class="social-link" href="#" aria-label="Twitter">tw</a>
+        <a class="social-link" href="#" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reservation">Reservations</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#loyalty">Loyalty</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Experiences</h4>
+      <ul>
+        <li><a href="#">Chef's Table</a></li>
+        <li><a href="#">Wine Cellar Tours</a></li>
+        <li><a href="#">Private Dining</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Catering</a></li>
+        <li><a href="#">Press & Media</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-hours">
+      <h4>Hours</h4>
+      <p><strong>Mon – Thu</strong><br>5:00 PM – 11:00 PM</p>
+      <p><strong>Fri – Sat</strong><br>12:00 PM – 12:00 AM</p>
+      <p><strong>Sunday</strong><br>12:00 PM – 10:00 PM</p>
+      <p style="margin-top:1rem"><strong style="color:var(--gold)">+1 (212) 555-0182</strong></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 AURUM Fine Dining. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== CART SIDEBAR ==================== -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h2 class="cart-title">Your Order</h2>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">Your cart is empty.<br><br>Add dishes to get started.</div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">$0</span>
+    </div>
+    <button class="form-submit" onclick="alert('Checkout coming soon!')">Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+ <script src="script.js"></script>
+</body>
+</html>
